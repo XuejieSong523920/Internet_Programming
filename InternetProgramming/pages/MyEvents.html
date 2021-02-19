@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>My Weekly Events</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script>
+    	// here is the pick pictures function
+    	var winImage;
+    	var pictures = ["zoom.jpg" "Boynton.png",  "zoom.jpg","CVS.jpg", "zoom.jpg", "Canvas.png", "zoom.jpg","tower.png", "zoom.jpg", "Trader.jpg"];
+    	var index = -1;
+
+    	function pickImage(){
+            index++;
+            index = index % pictures.length;
+            winImage = document.getElementById("right");
+            winImage.setAttribute("src", pictures[index]);
+    	}
+
+    	function outDiv(){
+    		document.getElementById("left-panel").className += "addClass";
+    		document.getElementById("map").className += "addClassForMap";
+    	}
+    </script>
+    
+</head>
+<body>
+	<!-- navbar -->
+	<ul>
+	  <li><a href="myEvents.html">My Events</a></li>
+	  <li><a href="MyForm.html">Form Input</a></li>
+	  <li><a href="myWidgets.html">My Widgets</a></li>
+	</ul>
+
+	<h1>My Weekly Events</h1>
+	<table id = "alternatecolor">
+         <thead>
+			<tr>
+            <th>Day</th>
+			<th>Event</th>
+			<th>Time</th>
+			<th>Event Location(Virtual or Physical)</th>
+			<th>Phone Number</th>
+			<th>Extra Info(URL)</th>
+			</tr>
+         </thead>
+		 
+         <tbody>
+            <tr class="hidden">
+			<td>Monday</td>
+			<td>CSCI 4131 Lecture</td>
+			<td>9:45am - 11:00am</td>
+			<td>
+				<div class="top-left">Virtual(Zoom)</div>
+				<img class="hover_img" src="zoom.jpg" alt="" height=50 width=80>
+		    </td>
+			<td>None</td>
+			<td><a href="https://onestop2.umn.edu/pcas/viewCatalogCourse.do?courseId=790654"> CSCI 4131</a></td>
+			</tr>  
+			<tr class="hidden">
+			<td>Tuesday</td>
+			<td>Third shot of HPV</td>
+			<td>11:00am - 11:15am</td>
+			<td>
+				<div class="top-left">410 Church St SE, Minneapolis, MN 55455</div>
+				<img class="hover_img" src="Boynton.png" alt="" height=50 width=80>
+			</td>
+			<td>(612) 625-8400</td>
+			<td><a href="https://boynton.umn.edu/">Boynton Health</a></td>
+			</tr> 
+
+			<tr class="hidden">
+			<td>Wednesday</td>
+			<td>CSCI 4131 Lecture</td>
+			<td>9:45am - 11:00am</td>
+			<td>
+				<div class="top-left">Virtual(Zoom)</div>
+				<img class="hover_img" src="zoom.jpg" alt="" height=50 width=80 >
+			</td>
+			<td>None</td>
+			<td><a href="https://onestop2.umn.edu/pcas/viewCatalogCourse.do?courseId=790654">CSCI 4131</a></td>
+			</tr>
+			<tr class="hidden">
+			<td>Thursday</td>
+			<td>Shopping in CVS</td>
+			<td>3:00pm - 4:00pm</td>
+			<td>
+				<div class="top-left">818 Washington Ave SE, Minneapolis, MN 55414</div>
+				<img class="hover_img" src="CVS.jpg" alt="" height=50 width=80>
+			</td>
+			<td>(612) 331-4240</td>
+			<td><a href="https://www.cvs.com/store-locator/cvs-pharmacy-address/818+Washington+Ave+Se-Minneapolis-MN-55414/storeid=8941?WT.mc_id=LS_GOOGLE_FS_8941">CVS</a></td>
+			</tr>   
+			<tr class="hidden">
+			<td>Thursday</td>
+			<td>Virtual Career Fair Prep</td>
+			<td>2:00pm - 3:30pm</td>
+			<td>
+				<div class="top-left">Virtual(Zoom)</div>
+				<img class="hover_img" src="zoom.jpg" alt="" height=50 width=80>
+			</td>
+			<td>None</td>
+			<td><a href="https://cse.umn.edu/college/events/international-student-virtual-career-fair-prep-workshop">Join URL</a></td>
+			</tr>   
+			<tr class="hidden">
+			<td>Friday</td>
+			<td>Due of CSCI 4131 first assignment</td>
+			<td>before 6:00pm</td>
+			<td>
+				<div class="top-left">Submit on Canvas</div>
+				<img class="hover_img" src="Canvas.png" alt="" height=50 width=80>
+			</td>
+			<td>None</td>
+			<td><a href="https://umn.instructure.com/courses/194074/assignments/1303444">HW1</a></td>
+			</tr>  
+			<tr class="hidden">
+			<td>Friday</td>
+			<td>CSCI 1933 Lab</td>
+			<td>8:00am - 9:55am</td>
+			<td>
+				<div class="top-left">Virtual(Zoom)</div>
+				<img class="hover_img" src="zoom.jpg" alt="" height=50 width=80>
+			</td>
+			<td>(672) 823-8965</td>
+			<td><a href="https://umn.instructure.com/courses/194102/pages/zoom-links-for-labs-slash-office-hours">CSCI 1933 Lab</a></td>
+			</tr> 
+			<tr class="hidden">
+			<td>Saturday</td>
+			<td>Hiking</td>
+			<td>3:00pm - 5:00pm</td>
+			<td>
+				<div class="top-left">55 Malcolm Ave SE, Minneapolis, MN 55414</div>
+				<img class="hover_img" src="tower.png" alt="" height=50 width=80>
+			</td>
+			<td> (651) 293-0200</td>
+			<td><a href="https://www.minneapolisparks.org/parks__destinations/parks__lakes/tower_hill_park/">Tower Hill Park</a></td>
+			</tr>
+			<tr class="hidden">
+			<td>Saturday</td>
+			<td>STAT 5701 Lectures</td>
+			<td>10:00am - 12:00am</td>
+			<td>
+				<div class="top-left">Virtual(Video)</div>
+				<img class="hover_img" src="zoom.jpg" alt="" height=50 width=80>
+			</td>
+			<td>None</td>
+			<td><a href="https://umn.instructure.com/courses/191874">STAT 5701</a></td>
+			</tr>
+			<tr class="hidden">
+			<td>Sunday</td>
+			<td>Shopping in Trader Joe's</td>
+			<td>2:00pm - 4:00pm</td>
+			<td>
+				<div class="top-left">721 Washington Ave S Ste 101, Minneapolis, MN 55406</div>
+				<img class="hover_img" src="Trader.jpg" alt="" height=50 width=80>
+			</td>
+			<td>(612) 339-2110</td>
+			<td><a href="https://locations.traderjoes.com/mn/minneapolis/725/?utm_source=utm_source=gmb&utm_medium=organic&utm_campaign=local">Trader Joe's</a></td>
+			</tr>
+         </tbody>
+      </table>
+      <!-- here is the pic on the right side -->
+      <div id = "winPic">
+      	<img id="right" src="gophers-mascot.png" alt="" width="350" height="250"><br><br>
+      	<div id="bts">
+      		<button onclick="int = setInterval(function(){pickImage()}, 2000)">Start</button>
+            <button id = "stp" onclick="int = clearInterval(int)">Stop</button>
+            
+      	</div>
+      </div>
+      <!-- here is the map below -->
+      <div id = "mapAndFrom">
+      	<div id="left-panel">
+	      <p><span id="total"></span></p>
+	  </div>
+      <div id="map"> </div>
+
+      	<table id="searchBox">
+      		 <tr>
+      			<th rowspan="5">
+      				<i class='fas fa-search-location' style='font-size:48px'></i>
+      			</th>
+      		 </tr>
+      				<tr>
+		      		<td>Find
+		      			<select id = "place" name = "place" onchange="myMap()"> 
+			      			<option value="restaurant">Restaurant</option>
+			      			<option value="hospital">Hospital</option>
+			      			<option value="parking">Parking</option>
+			      			<option value="supermarket">Supermarket</option>
+			      			<option value="other">Other</option>
+			      		</select>
+			      	</td>
+			       </tr>
+			       <tr>
+		              <td><input type = "text" id = "other" placeholder = "Enter Other Places" disabled onchange="myMap()"></td>
+		            </tr>
+		            <tr>
+		               <td>in <input type = "number" id = "radius" value="1500" onchange="myMap()"> meters</td>
+		            </tr>
+		            <tr id="line">
+		               <td><button id="goSearch" type="button">Search</button></td>
+		           </tr>
+      		
+      		    <tr>
+      			<th rowspan="5">
+      				<i class='fas fa-route' style='font-size:48px'></i>
+      			</th>
+      		    </tr>
+      				<tr>
+      					<td>Direction to</td>
+      				</tr>
+      				<tr>
+      					<td><input id="dest" type="text"><td>
+      				</tr>
+      				<tr>
+      					<td>by</td>
+      				</tr>
+      				<tr>
+      					<td>
+			  				<form action="/action_page.php">
+			  				  <label for="walk">WALK</label>
+							  <input type="radio" id="walk" name="choice" value="WALKING"><br>
+							  <label for="drive">DRIVE</label>
+							  <input type="radio" id="drive" name="choice" value="DRIVING" required><br>
+							  <label for="train">TRANSIT</label>
+							  <input type="radio" id="train" name="choice" value="TRANSIT">
+							 </form>
+							 <input type="submit" id="findRoute" value="Go!" onclick="outDiv()">
+						</td>
+					</tr>
+      	</table>
+      	<table>
+	      	<tbody>
+	      		
+	      	</tbody>
+	      </table>
+      </div>
+      
+ <script src="event.js"></script>
+      <script defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATlE31Uj2E00IhgkINpBJnBhae4QcvL8E&libraries=places&language=en&callback=myMap">
+</script>
+</body>
+</html>

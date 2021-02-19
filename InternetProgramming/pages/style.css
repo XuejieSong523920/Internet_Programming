@@ -1,0 +1,201 @@
+#alternatecolor {
+   border-collapse: collapse;
+   border: 1px solid black;
+   font-size: 16px;
+}
+#alternatecolor td{
+   width : 100px;
+   border: 1px solid black;
+}
+#alternatecolor th{
+	border: 1px solid black;
+}
+frame {
+	border : 0;
+}
+body{
+	background: #bbded6;
+}
+/*for change color*/
+#alternatecolor tr:nth-child(even){
+	background-color: #fae3d9;
+}
+#alternatecolor tr:nth-child(odd){
+	background-color: white;
+}
+#alternatecolor th{
+	background-color: #fae3d9;
+}
+/*for the form table*/
+#formTable{
+	border-color : gray;
+	background-color: white;
+	margin: 10px;
+    width: 100%;
+    height : 70px;
+    border-radius: 25px;
+}
+
+#formTable td{
+	border-bottom: 1px solid gray;
+	padding: 10px;
+	text-align : left;
+	height: 50px;
+}
+#formTable td:nth-child(odd){
+    border-right: 1px solid gray;
+}
+/*for navbar*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fae3d9;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #5668a3;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #ffb6b9;
+}
+
+/*for input*/
+#event, #day, #start, #end, #phone, #location, #info, #url{
+	width : 200px;
+	height: 30px;
+	border-radius: 5px;
+}
+/*inmage position*/
+#winPic {
+  position: absolute;
+  right: 20px;
+  top: 285px;
+  /*align-items: right;*/
+}
+#bts{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#stp{
+  margin-left:30px;
+}
+/*hiden image*/
+.hidden .hover_img {
+  display:none;
+}
+
+.hidden:hover .hover_img{
+  display:inline;
+}
+/*#passwordcontainer {
+  background : green;
+}*/
+#password{
+  margin-top:50px;
+}
+
+#stre{
+  margin-top:100px;
+}
+
+#strengthbar{
+  width : 300px;
+  height: 20px;
+  margin-top:10px;
+  border : solid 1px black;
+  background-color: #d9dbd9;
+  margin-bottom: 80px;
+}
+
+#fill{
+  width : 0px;
+  height : 20px;
+  background-color: #6caf00;
+}
+
+#pswdvalid{
+  margin: 30px;
+  font-family : Lucida Console;
+  
+  width:500px;
+  background-color: #74c5ed ;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 600px 600px;;
+}
+.grid-item{
+  width : 1000px;
+  padding: 20px;
+  height: 300px;
+}
+
+.instagram-media{
+  width:200px;
+  height: 1000px;
+}
+
+#searchBox {
+  position: absolute;
+  width : 28.5%;
+  right: 20px;
+  top: 660px;
+  background: white;
+  height:400px;
+  /*align-items: right;*/
+}
+#radius{
+  width : 80px;
+}
+
+#iconLocation{
+  width : 30%;
+}
+
+.addClass{
+  display:block;
+  font-family: "Roboto", "sans-serif";
+  background:white;
+  line-height: 30px;
+  padding-left: 10px;
+  float: left;
+  width: 24%;
+  height: 400px;
+  overflow: auto;
+}
+
+#map{
+  width:70%; 
+  height:400px;
+}
+
+.addClassForMap{
+  width: 40%;
+}
+
+#formMap{
+  width:30%; 
+  height:300px;
+  position: absolute;
+  right: 20px;
+  top: 200px;
+}  
+
+#searchBox th{
+  border-bottom: 1px solid gray;
+}
+#line td{
+  border-bottom: 1px solid gray;
+}

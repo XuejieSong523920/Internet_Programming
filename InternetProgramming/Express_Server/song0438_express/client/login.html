@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	    <title>Login Page</title>
+	    <style type="text/css">
+              .jumbotron { text-align: center; }
+              #invalidmessage{
+                margin-left: 10%;
+                width: 80%;
+                height: 30px;
+                text-align: center;
+                color: red;
+              }
+      </style>
+
+  </head>
+
+  <body>
+   	<div class="jumbotron" style="background: DarkSeaGreen !important">
+      <h1>Login Page</h1>
+      <p>Please enter your username and password. Both are case sensitive.</p>
+    </div>
+
+    <div id='invalidmessage'></div>
+
+    <form id="myForm">
+      <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <div class="form-group">
+            <label for="usr">User:</label>
+            <input type="text" class="form-control" id="usr" placeholder="Username" required="required">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Password" required="required">
+          </div>
+          <input type="submit" class="btn btn-primary btn-block" value="Log In">
+          <div class="col-md-1"></div>
+        </div>
+    </form>
+
+    <script>
+    $(document).ready(function(){
+      $('#myForm').submit(function(event){
+          event.preventDefault();
+          let login = $('#usr').val();
+          let pwd = $('#pwd').val();
+          $.post('/sendLoginDetails',
+            {"username": login, "password": pwd},
+            (data) => {
+              //console.log(data);
+              if(data == 'success'){
+                window.location.href = '/events';
+              }else{
+                document.getElementById('invalidmessage').innerHTML = "Invalid credentials. PLease try again!";
+                document.getElementById('invalidmessage').style.backgroundColor = "pink";
+              }
+          });
+        });
+    });
+    </script>
+  </body>
+</html>
