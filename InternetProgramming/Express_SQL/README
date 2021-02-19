@@ -1,0 +1,5 @@
+My x500id is: song0438
+I used the default acc_login and acc_password values from inser_into_accounts_table.js, 
+which is: 
+acc_login: charlie; acc_password: tango
+And I set my localhost port as 9184.

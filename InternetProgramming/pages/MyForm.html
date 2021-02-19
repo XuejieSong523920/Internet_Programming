@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Form Input</title>
+</head>
+<body>
+	<!-- navbar -->
+	<ul>
+	  <li><a href="myEvents.html">My Events</a></li>
+	  <li><a href="MyForm.html">Form Input</a></li>
+	  <li><a href="myWidgets.html">My Widgets</a></li>
+	</ul>
+
+	<div class="container">
+	<div class="row">
+		<div style="width: 30%; margin: 25px auto">
+			<!-- so here all the things we get will go to the "campgrounds" post page -->
+			<form action="http://localhost:9001" method="POST">
+				<table id= "formTable">
+					<tbody>
+						<tr>
+							<td id = "left">Event</td>
+							<td><input type = "text" id="event" name="event" required="required" pattern="^[a-zA-Z0-9, ]*$" size="30"><br><br></td>
+						</tr>
+						<tr>
+							<td>Day of Week</td>
+							<td><select id = "day" name="day">
+									<option>Sunday</option>
+									<option>Monday</option>
+									<option>Tuesday</option>
+									<option>Wednesday</option>
+									<option>Thursday</option>
+									<option>Friday</option>
+									<option>Saturday</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>Start</td>
+							<td>
+								<input type="time" id="start" name="start">
+							</td>
+						</tr>
+						<tr>
+							<td>End</td>
+							<td>
+								<input type="time" id="end" name="end">
+							</td>
+						</tr>
+						<tr>
+							<td>Phone</td>
+							<td>
+								<input type="text" id="phone" name="phone">
+							</td>
+						</tr>
+						<tr>
+							<td>Location</td>
+							<td>
+								<input type="text" id="location" name="location" pattern="^[a-zA-Z0-9, ]*$">
+							</td>
+						</tr>
+						<tr>
+							<td>Extra Info</td>
+							<td>
+								<input type="text" id="info" name="info">
+							</td>
+						</tr>
+						<tr>
+							<td>Enter URL for the Extra Info</td>
+							<td>
+								<input type="url" id="url" name="url">
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><input type="submit" value="Submit"></td>
+						</tr>
+					</tbody>
+				</table>
+		    </form>
+		</div>
+	</div>
+	<div id="formMap"> </div>
+</div>
+<script>
+
+	function myMap(){
+        var mapProp = {
+    		center: new google.maps.LatLng (44.9727, -93.23540000000003),
+    		zoom:14,
+    	}
+    	var map = new google.maps.Map(document.getElementById("formMap"), mapProp);
+    	var input = document.getElementById("location");
+	    var autocomplete = new google.maps.places.Autocomplete(input);
+        geocoder = new google.maps.Geocoder();
+	    google.maps.event.addListener(map, 'click', function(e){
+	    //alert('clicked @' + e.latLng.toString())
+	    geocoder.geocode({'location': e.latLng}, function(results, status){
+	      if (status === google.maps.GeocoderStatus.OK) {
+	        if (results[0]) {
+
+	          document.getElementById("location").value = results[0].formatted_address;
+
+
+	        } else {
+	          console.log('No results found');
+	        }
+	      } else {
+	        console.log('Geocoder failed due to: ' + status);
+	      }
+	    });
+	});
+}
+</script>
+<script defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATlE31Uj2E00IhgkINpBJnBhae4QcvL8E&libraries=places&language=en&callback=myMap">
+</script>
+</body>
+</html>
